@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import {UpdateAvailable, UpdateActivatedReload, UpdateActivated} from "./WorkBox";
+import {UpdateAvailable, UpdateActivatedReload, UpdateActivated} from "react-workbox";
 
 class App extends Component {
   render() {

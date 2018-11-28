@@ -29,27 +29,37 @@ function registerValidSW(
         onError = emptyFunction,
     }: ConfigType
 ) {
-    serviceWorker.addEventListener('controllerchange', () => {
+    serviceWorker.addEventListener('controllerchange', (...props) => {
+        console.log('CONTROLLER CHANGE', props, serviceWorker);
         onActivate();
     });
+
+    function checkUpdateAvailable(registration) {
+        if (registration.waiting && serviceWorker.controller) {
+            onUpdate(registration.waiting);
+        }
+    }
 
     serviceWorker
         .register(serviceWorkerUrl)
         .then(registration => {
             onRegister(registration);
 
+            checkUpdateAvailable(registration);
+
+            let newWorker = null;
             registration.onupdatefound = () => {
-                if (registration.waiting && registration.active) {
-                    onUpdate(registration.waiting);
+                if (newWorker) {
+                    newWorker.onstatechange = null;
                 }
 
-                const newWorker = ((registration.installing: any): ServiceWorker);
+                newWorker = ((registration.installing: any): ServiceWorker);
 
                 newWorker.onstatechange = () => {
                     if (newWorker.state === 'installed') {
-                        if (serviceWorker.controller) {
-                            onUpdate(newWorker);
-                        }
+                        newWorker.onstatechange = null;
+
+                        checkUpdateAvailable(registration);
                     }
                 };
             };
