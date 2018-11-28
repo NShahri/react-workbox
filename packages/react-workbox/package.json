@@ -1,7 +1,20 @@
 {
   "name": "react-workbox",
   "version": "0.1.0",
-  "private": true,
+  "description": "Helper to create es module",
+  "license": "MIT",
+  "repository": "https://github.com/NShahri/react-workbox",
+  "author": "Nima Shahri <https://github.com/NShahri>",
+  "bugs": {
+    "url": "https://github.com/NShahri/react-workbox/issues"
+  },
+  "keywords": [
+    "workbox",
+    "service worker",
+    "service",
+    "worker",
+    "react"
+  ],
   "main": "build/cjs/index.js",
   "module": "build/esm/index.js",
   "scripts": {
@@ -13,6 +26,9 @@
     "build:cjs": "BABEL_ENV=cjs babel src --out-dir build/cjs/ --ignore \"src/**/*.test.js\"",
     "format": "prettier --config ./.prettierrc --write \"src/**/*.js\" && module-grouping 'src/**/*.js' --write"
   },
+  "files": [
+    "src/**/*"
+  ],
   "devDependencies": {
     "@babel/cli": "7.1.5",
     "@babel/core": "7.1.6",

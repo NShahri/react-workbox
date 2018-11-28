@@ -1,6 +1,12 @@
 {
   "name": "react-workbox",
   "version": "0.1.0",
+  "license": "MIT",
+  "repository": "https://github.com/NShahri/react-workbox",
+  "author": "Nima Shahri <https://github.com/NShahri>",
+  "bugs": {
+    "url": "https://github.com/NShahri/react-workbox/issues"
+  },
   "private": true,
   "workspaces": ["packages/**"]
 }
