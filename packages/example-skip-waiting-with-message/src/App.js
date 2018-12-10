@@ -4,6 +4,13 @@ import './App.css';
 import {UpdateAvailable, UpdateActivatedReload, UpdateActivated, WorkBoxProvider} from "react-workbox";
 
 class App extends Component {
+    constructTime = new Date();
+
+    onUpdateClick = async () => {
+        const registration = await navigator.serviceWorker.getRegistration();
+        registration.waiting.postMessage('skipWaiting');
+    };
+
     render() {
         return (
             <WorkBoxProvider interval={30 * 1000}>
@@ -11,22 +18,15 @@ class App extends Component {
                     <header className="App-header">
                         <img src={logo} className="App-logo" alt="logo"/>
                         <p>
-                            Edit <code>src/App.js</code> and save to reload.
+                            Constructed on {this.constructTime.toLocaleString()}.
                         </p>
-                        <a
-                            className="App-link"
-                            href="https://reactjs.org"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            Learn React
-                        </a>
                         <UpdateAvailable>
-                            Update Available
+                            <button
+                                onClick={this.onUpdateClick}>Update
+                                Available - Click to Install
+                            </button>
                         </UpdateAvailable>
-                        <UpdateActivated>
-                            Update Activated
-                        </UpdateActivated>
+                        <UpdateActivatedReload/>
                     </header>
                 </div>
             </WorkBoxProvider>
