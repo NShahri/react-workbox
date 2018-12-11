@@ -2,8 +2,8 @@
 
 ### Why?
 
-In this case, new service worker will activated asap and start caching all network request
- and the window will be refreshed on user acceptance
+In this case, new service worker will activated asap and will starts caching all network requests.
+The window will be refreshed on user acceptance.
 
 ### how it works
 
@@ -16,3 +16,5 @@ Running sample:
 - A confirmation message will be display to the user
 - When the message accepted by user, page/window will be refreshed
 
+Please refer to `react-workbox` documentation:
+https://github.com/NShahri/react-workbox
