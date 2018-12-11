@@ -17,3 +17,5 @@ Running sample:
 - When new version is available, a message to tell the user about new version can be displayed
 - When all tabs in the browser closed, the new version will be activated
 
+Please refer to `react-workbox` documentation:
+https://github.com/NShahri/react-workbox
