@@ -1,6 +1,6 @@
 {
   "name": "react-workbox",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Manage installation and activation of service worker",
   "license": "MIT",
   "repository": "https://github.com/NShahri/react-workbox",
@@ -13,7 +13,13 @@
     "service worker",
     "service",
     "worker",
-    "react"
+    "react",
+    "cache",
+    "PWA",
+    "progressive",
+    "progressive web app",
+    "create react app",
+    "CRA"
   ],
   "main": "build/cjs/index.js",
   "module": "build/esm/index.js",
@@ -27,7 +33,7 @@
     "format": "prettier --config ./.prettierrc --write \"src/**/*.js\" && module-grouping 'src/**/*.js' --write"
   },
   "files": [
-    "src/**/*"
+    "build/**/*"
   ],
   "devDependencies": {
     "@babel/cli": "7.1.5",
