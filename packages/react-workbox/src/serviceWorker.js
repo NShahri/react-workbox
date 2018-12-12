@@ -29,11 +29,6 @@ function registerValidSW(
         onError = emptyFunction,
     }: ConfigType
 ) {
-    serviceWorker.addEventListener('controllerchange', (...props) => {
-        console.log('CONTROLLER CHANGE', props, serviceWorker);
-        onActivate();
-    });
-
     function checkUpdateAvailable(registration) {
         if (registration.waiting && serviceWorker.controller) {
             onUpdate(registration.waiting);
@@ -47,19 +42,18 @@ function registerValidSW(
 
             checkUpdateAvailable(registration);
 
-            let newWorker = null;
             registration.onupdatefound = () => {
-                if (newWorker) {
-                    newWorker.onstatechange = null;
-                }
-
-                newWorker = ((registration.installing: any): ServiceWorker);
-
-                newWorker.onstatechange = () => {
-                    if (newWorker.state === 'installed') {
-                        newWorker.onstatechange = null;
-
-                        checkUpdateAvailable(registration);
+                registration.installing.onstatechange = e => {
+                    switch (e.target.state) {
+                        case 'installed':
+                            e.target.firstWorker = !Boolean(serviceWorker.controller);
+                            checkUpdateAvailable(registration);
+                            break;
+                        case 'activated':
+                            if (!e.target.firstWorker) {
+                                onActivate();
+                            }
+                            break;
                     }
                 };
             };

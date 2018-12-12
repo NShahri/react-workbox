@@ -53,8 +53,7 @@ class WorkBoxProvider extends Component<Props, State> {
                 serviceWorkerUrl: serviceWorkerUrl,
                 onRegister: this.setCheckUpdateTimer,
                 onUpdate: () => this.setState({isUpdateAvailable: true}),
-                onActivate: () =>
-                    this.setState({isUpdateAvailable: false, isUpdateActivated: true}),
+                onActivate: () => this.setState({isUpdateAvailable: false, isUpdateActivated: true}),
                 onError: onError,
             });
         }
