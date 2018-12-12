@@ -16,8 +16,9 @@ class App extends Component {
                             Constructed on {this.constructTime.toLocaleString()}.
                         </p>
                         <UpdateAvailable>
-                            Update Available - This message should not be visible,
+                            Update Available - This message should be visible only for small time,
                             as the new version should be activated asap.
+                            It is recommended to remove UpdateAvailable if you do not need it.
                         </UpdateAvailable>
                         <UpdateActivated>
                             <button
