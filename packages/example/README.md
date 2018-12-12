@@ -6,7 +6,7 @@ In this sample, only want to notify to the user new version is available, and to
 all tabs/pages has to be closed and reopened
 
 NOTE:
-**refreshing pages will not activated the new version**
+**refreshing pages will not activate the new version**
 
 ### How to implement
 
@@ -32,9 +32,9 @@ Use `UpdateAvailable` or `UpdateActivated` in your app:
 ### Running demo:
 - Run `npm start` or `yarn start` to run the sample
 - Browse http://localhost:9902
-- It will generate a new service worker every minute
+- This sample generates a new service worker every minute for demo purpose
 - Client will check for new update every 30 seconds
-- When new version is available, a message to tell the user about new version can be displayed
+- When new version is available, a message to tell the user about new version will be displayed
 - When all tabs in the browser closed, the new version will be activated
 
 ### Documentation
