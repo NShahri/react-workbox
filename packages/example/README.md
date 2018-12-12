@@ -2,14 +2,34 @@
 
 ### Why?
 
-In this case, all tabs which is using the same service worker, has to be closed and reopened again.
+In this sample, only want to notify to the user new version is available, and to activate the new version,
+all tabs/pages has to be closed and reopened
 
-##NOTE:
+NOTE:
 **refreshing pages will not activated the new version**
 
-### how it works
+### How to implement
 
-Running sample:
+Add `WorkBoxProvider` to the `App.js`:
+```js
+<WorkBoxProvider interval={30 * 1000}>
+    [...]
+</WorkBoxProvider>
+```
+
+Use `UpdateAvailable` or `UpdateActivated` in your app:
+```js
+    <UpdateAvailable>
+        Update Available - You need to close all tabs on reopen your browser
+        to be able to use new version.
+    </UpdateAvailable>
+    <UpdateActivated>
+        Update Activated - You can see this message because dev tools is used
+        to activate the new version by using skip waiting
+    </UpdateActivated>
+```
+
+### Running demo:
 - Run `npm start` or `yarn start` to run the sample
 - Browse http://localhost:9902
 - It will generate a new service worker every minute
@@ -17,5 +37,6 @@ Running sample:
 - When new version is available, a message to tell the user about new version can be displayed
 - When all tabs in the browser closed, the new version will be activated
 
+### Documentation
 Please refer to `react-workbox` documentation:
 https://github.com/NShahri/react-workbox
