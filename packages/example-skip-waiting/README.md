@@ -29,13 +29,23 @@ Use `UpdateAvailable` or `UpdateActivated` in your app:
 ```
 
 you need to change your service worker to skip waiting as soon as it is installed.
-
-```js
-workbox.skipWaiting();
-```
-
 As in create-react-app it is not possible to change workbox configurations,
 you can use [customize-cra](https://github.com/arackaf/customize-cra) to change default workbox configurations.
+
+This is the config for customize-cra, to set skipWaiting in this sample:
+```js
+const {adjustWorkbox, override} = require('customize-cra');
+
+module.exports = {
+    webpack: override(
+        adjustWorkbox(wb =>
+            Object.assign(wb, {
+                skipWaiting: true,
+            })
+        )),
+};
+```
+
 
 - Pull request to override workbox configuration https://github.com/facebook/create-react-app/pull/5369
 - customize-cra config https://github.com/NShahri/react-workbox/blob/master/packages/example-skip-waiting/config-overrides.js

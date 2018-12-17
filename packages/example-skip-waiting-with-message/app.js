@@ -6,9 +6,8 @@ const port = 9904;
 
 app.get('/service-worker.js', function (req, res) {
     const jsContent = fs.readFileSync('build/service-worker.js', 'utf8');
-    const messageHandler = fs.readFileSync('serviceWorkerMesssageHandler.js', 'utf8');
     res.set('Content-Type', 'application/javascript');
-    res.send([jsContent, '/*', new Date().toISOString().substring(11, 16), '*/', messageHandler].join(''));
+    res.send([jsContent, '/*', new Date().toISOString().substring(11, 16), '*/'].join(''));
 });
 
 app.use(express.static('build'));

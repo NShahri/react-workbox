@@ -34,9 +34,26 @@ Use `UpdateAvailable` or `UpdateActivated` in your app:
     <UpdateActivatedReload/>
 ```
 
-It is not clear how `workbox-webpack-plugin` can generate communication between the window and service worker contexts.
-As this sample needs to communicate to service worker, add the following code to your service worker file:
+you need to change your service worker to be able to communicate and skip waiting when user clicks on update button.
+As in create-react-app it is not possible to change workbox configurations,
+you can use [customize-cra](https://github.com/arackaf/customize-cra) to change default workbox configurations.
+
+This is the config for customize-cra, to setup communication and skip waiting in this sample:
 ```js
+const {adjustWorkbox, override} = require('customize-cra');
+
+module.exports = {
+    webpack: override(
+        adjustWorkbox(wb =>
+            Object.assign(wb, {
+                importScripts: ['serviceWorkerMessageHandler.js']
+            })
+        )),
+};
+```
+
+```js
+// serviceWorkerMessageHandler.js file
 self.addEventListener('message', (event) => {
     if (!event.data){
         return;

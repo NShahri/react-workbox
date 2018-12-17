@@ -8,7 +8,8 @@
     "react-scripts": "2.1.1"
   },
   "scripts": {
-    "start": "react-scripts build && node app.js"
+    "start": "react-app-rewired build && node app.js",
+    "build": "react-app-rewired build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -20,6 +21,8 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "express": "^4.16.4"
+    "customize-cra": "^0.2.8",
+    "express": "^4.16.4",
+    "react-app-rewired": "^1.6.2"
   }
 }
