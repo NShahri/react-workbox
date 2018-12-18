@@ -1,5 +1,3 @@
-// @flow
-
 import emptyFunction from 'empty/function';
 
 type ConfigType = {|
@@ -13,9 +11,7 @@ type ConfigType = {|
 export function register(config: ConfigType) {
     const serviceWorker = navigator.serviceWorker;
     if (serviceWorker) {
-        window.addEventListener('load', () => {
-            registerValidSW(serviceWorker, config);
-        });
+        registerValidSW(serviceWorker, config);
     }
 }
 
