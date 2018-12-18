@@ -27,9 +27,10 @@
     "test": "jest",
     "prepublish": "npm run build",
     "prebuild": "rimraf build/",
-    "build": "npm run build:cjs && npm run build:esm",
+    "build": "npm run build:cjs && npm run build:esm && npm run build:flow",
     "build:esm": "BABEL_ENV=esm babel src --out-dir build/esm/ --ignore \"src/**/*.test.js\"",
     "build:cjs": "BABEL_ENV=cjs babel src --out-dir build/cjs/ --ignore \"src/**/*.test.js\"",
+    "build:flow": "echo \"// @flow\\nexport * from '../flow';\" > build/esm/index.js.flow && echo \"// @flow\\nexport * from '../flow';\" > build/cjs/index.js.flow && flow-copy-source --ignore \"**/*.test.js\" src/ build/flow/",
     "format": "prettier --config ./.prettierrc --write \"src/**/*.js\" && module-grouping 'src/**/*.js' --write"
   },
   "files": [
@@ -46,6 +47,7 @@
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^23.6.0",
     "flow-bin": "0.89.0",
+    "flow-copy-source": "^2.0.2",
     "jest": "23.6.0",
     "module-grouping-cli": "^0.1.0",
     "prettier": "^1.15.2",
