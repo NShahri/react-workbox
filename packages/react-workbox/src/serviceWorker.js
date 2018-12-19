@@ -1,6 +1,6 @@
 // @flow
 
-import emptyFunction from 'empty/function';
+function emptyFunction() {}
 
 // TODO: use Event type
 type ServiceWorkerEvent = {|
