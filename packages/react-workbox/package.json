@@ -23,6 +23,7 @@
   ],
   "main": "build/cjs/index.js",
   "module": "build/esm/index.js",
+  "typings": "./types/index.d.ts",
   "scripts": {
     "test": "jest",
     "prepublish": "npm run build",
@@ -34,7 +35,8 @@
     "format": "prettier --config ./.prettierrc --write \"src/**/*.js\" && module-grouping 'src/**/*.js' --write"
   },
   "files": [
-    "build/**/*"
+    "build/**/*",
+    "types/*"
   ],
   "devDependencies": {
     "@babel/cli": "7.2.0",
