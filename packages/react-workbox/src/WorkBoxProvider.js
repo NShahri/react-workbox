@@ -15,10 +15,10 @@ type Props = {|
     onError: Error => void,
 |};
 
-type State = {
+type State = {|
     isUpdateAvailable: boolean,
     isUpdateActivated: boolean,
-};
+|};
 
 class WorkBoxProvider extends Component<Props, State> {
     static defaultProps = {

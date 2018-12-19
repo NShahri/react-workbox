@@ -22,6 +22,4 @@ const UpdateActivated = ({children}: Props) => (
     </WorkBoxContext.Consumer>
 );
 
-UpdateActivated.defaultProps = {};
-
 export default UpdateActivated;
