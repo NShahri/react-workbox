@@ -22,7 +22,7 @@ type State = {|
 
 class WorkBoxProvider extends Component<Props, State> {
     static defaultProps = {
-        disabled: false,
+        disabled: process.env.NODE_ENV !== 'production',
         serviceWorkerUrl: `/service-worker.js`,
         interval: 60 * 60 * 1000, // 1 hour
         onError: (error: Error) => console.error('Error during service worker registration:', error),
