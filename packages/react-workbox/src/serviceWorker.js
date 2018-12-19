@@ -1,4 +1,14 @@
+// @flow
+
 import emptyFunction from 'empty/function';
+
+// TODO: use Event type
+type ServiceWorkerEvent = {|
+    target: EventTarget & {|
+        state: 'installed' | 'activated',
+        firstWorker: ?boolean,
+    |},
+|};
 
 type ConfigType = {|
     serviceWorkerUrl: string,
@@ -39,14 +49,15 @@ function registerValidSW(
             checkUpdateAvailable(registration);
 
             registration.onupdatefound = () => {
-                registration.installing.onstatechange = e => {
-                    switch (e.target.state) {
+                // $FlowFixMe
+                registration.installing.onstatechange = ({target}: ServiceWorkerEvent) => {
+                    switch (target.state) {
                         case 'installed':
-                            e.target.firstWorker = !Boolean(serviceWorker.controller);
+                            target.firstWorker = !Boolean(serviceWorker.controller);
                             checkUpdateAvailable(registration);
                             break;
                         case 'activated':
-                            if (!e.target.firstWorker) {
+                            if (!target.firstWorker) {
                                 onActivate();
                             }
                             break;
