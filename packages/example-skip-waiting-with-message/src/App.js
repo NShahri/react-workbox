@@ -7,8 +7,12 @@ class App extends Component {
     constructTime = new Date();
 
     onUpdateClick = async () => {
-        const registration = await navigator.serviceWorker.getRegistration();
-        registration.waiting.postMessage('skipWaiting');
+        if(navigator.serviceWorker) {
+            const registration = await navigator.serviceWorker.getRegistration();
+            if (registration.waiting) {
+                registration.waiting.postMessage('skipWaiting');
+            }
+        }
     };
 
     render() {
