@@ -46,15 +46,14 @@
     "@babel/preset-env": "^7.2.3",
     "@babel/preset-flow": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
-    "babel-core": "^7.0.0-bridge.0",
-    "babel-jest": "^23.6.0",
-    "flow-bin": "0.89.0",
+    "babel-jest": "^24.0.0",
+    "flow-bin": "0.92.1",
     "flow-copy-source": "^2.0.2",
-    "jest": "23.6.0",
-    "module-grouping-cli": "^0.1.0",
+    "jest": "24.0.0",
+    "module-grouping-cli": "^0.2.9",
     "prettier": "^1.15.2",
     "react-test-renderer": "^16.7.0",
-    "rimraf": "2.6.2"
+    "rimraf": "2.6.3"
   },
   "dependencies": {
     "@babel/runtime": "^7.1.5",
