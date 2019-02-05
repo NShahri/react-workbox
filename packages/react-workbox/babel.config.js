@@ -1,18 +1,14 @@
 'use strict';
 
-const presets = [['@babel/preset-env'], '@babel/preset-react', '@babel/preset-flow'];
+const presets = [['@babel/preset-env', {loose: true}], '@babel/preset-react', '@babel/preset-flow'];
 const plugins = [['@babel/plugin-proposal-class-properties', {loose: true}]];
 
 if (process.env['BABEL_ENV'] === 'esm') {
     presets[0] = [
         '@babel/preset-env',
         {
-            loose: false,
+            loose: true,
             modules: false,
-            targets: {
-                esmodules: true,
-            },
-            shippedProposals: true,
         },
     ];
 }
