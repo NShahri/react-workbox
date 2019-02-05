@@ -1,0 +1,9 @@
+language: node_js
+node_js:
+    - "10"
+deploy:
+    provider: npm
+    email: "YOUR_EMAIL_ADDRESS"
+    api_key: $NPM_API_KEY
+    on:
+        tags: true
