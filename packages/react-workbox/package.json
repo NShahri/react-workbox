@@ -1,6 +1,6 @@
 {
   "name": "react-workbox",
-  "version": "0.5.7",
+  "version": "0.5.8",
   "description": "Manage installation and activation of service worker",
   "license": "MIT",
   "repository": "https://github.com/NShahri/react-workbox",
