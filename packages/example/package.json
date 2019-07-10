@@ -14,7 +14,7 @@
     "react-scripts": "3.0.1"
   },
   "scripts": {
-    "start": "react-scripts build && node app.js"
+    "start": "SKIP_PREFLIGHT_CHECK=true react-scripts build && node app.js"
   },
   "eslintConfig": {
     "extends": "react-app"

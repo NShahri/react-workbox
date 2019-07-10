@@ -8,8 +8,7 @@
     "react-scripts": "3.0.1"
   },
   "scripts": {
-    "start": "react-app-rewired build && node app.js",
-    "build": "react-app-rewired build"
+    "start": "SKIP_PREFLIGHT_CHECK=true react-app-rewired build && node app.js"
   },
   "eslintConfig": {
     "extends": "react-app"
