@@ -23,7 +23,7 @@ Use `UpdateAvailable` or `UpdateActivated` in your app:
     </UpdateAvailable>
     <UpdateActivated>
         <button
-            onClick={() => window.location.reload()}>Update Activated - Click to Refresh
+            onClick={() => window.location.reload(true)}>Update Activated - Click to Refresh
         </button>
     </UpdateActivated>
 ```

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
-import {UpdateAvailable, UpdateActivatedReload, UpdateActivated, WorkBoxProvider} from "react-workbox";
+import {UpdateAvailable, UpdateActivated, WorkBoxProvider} from "react-workbox";
 
 class App extends Component {
     constructTime = new Date();
@@ -22,7 +22,7 @@ class App extends Component {
                         </UpdateAvailable>
                         <UpdateActivated>
                             <button
-                                onClick={() => window.location.reload()}>Update Activated - Click to Refresh
+                                onClick={() => window.location.reload(true)}>Update Activated - Click to Refresh
                             </button>
                         </UpdateActivated>
                     </header>

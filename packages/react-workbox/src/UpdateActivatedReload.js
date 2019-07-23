@@ -9,7 +9,7 @@ const UpdateActivatedReload = () => {
         <UpdateActivated>
             {isUpdateActivated => {
                 if (isUpdateActivated) {
-                    window.location.reload();
+                    window.location.reload(true);
                 }
 
                 return null;
