@@ -27,7 +27,7 @@
   "scripts": {
     "test": "jest",
     "prepublish": "npm run build",
-    "prebuild": "rm -rf build/",
+    "prebuild": "rimraf build/",
     "build": "npm run build:cjs && npm run build:esm && npm run build:flow",
     "build:esm": "BABEL_ENV=esm babel src --out-dir build/esm/ --ignore \"src/**/*.test.js\"",
     "build:cjs": "BABEL_ENV=cjs babel src --out-dir build/cjs/ --ignore \"src/**/*.test.js\"",
