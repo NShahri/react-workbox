@@ -9,22 +9,20 @@
 
 language: node_js
 node_js:
-    - "14"
+  - "14"
 before_install:
   - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.17.3
   - export PATH="$HOME/.yarn/bin:$PATH"
 
 deploy:
-  -
-    provider: npm
+  - provider: npm
     email: "YOUR@EMAIL.ADDRESS"
     api_key: $NPM_API_KEY
     tag: next
     on:
-        branch: next
-  -
-      provider: npm
-      email: "YOUR@EMAIL.ADDRESS"
-      api_key: $NPM_API_KEY
-      on:
-          tags: true
+      branch: next
+  - provider: npm
+    email: "YOUR@EMAIL.ADDRESS"
+    api_key: $NPM_API_KEY
+    on:
+      tags: true
