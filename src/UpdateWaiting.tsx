@@ -1,9 +1,9 @@
 import React, {FC} from 'react';
 
-import WorkBoxContext from './WorkBoxContext';
+import WorkboxContext from './WorkboxContext';
 
 const UpdateWaiting: FC = ({children}) => (
-    <WorkBoxContext.Consumer>
+    <WorkboxContext.Consumer>
         {({isUpdateWaiting, activateUpdate}) => {
             if (typeof children === 'function') {
                 return children(isUpdateWaiting, activateUpdate);
@@ -11,7 +11,7 @@ const UpdateWaiting: FC = ({children}) => (
 
             return isUpdateWaiting && children;
         }}
-    </WorkBoxContext.Consumer>
+    </WorkboxContext.Consumer>
 );
 
 export default UpdateWaiting;

@@ -5,6 +5,6 @@ interface ContextType {
     activateUpdate?: () => void;
 }
 
-const WorkBoxContext: Context<ContextType> = createContext<ContextType>({isUpdateWaiting: false});
+const WorkboxContext: Context<ContextType> = createContext<ContextType>({isUpdateWaiting: false});
 
-export default WorkBoxContext;
+export default WorkboxContext;

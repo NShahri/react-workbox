@@ -1,9 +1,9 @@
 import React, {FC, useEffect, useState} from 'react';
 import {Workbox} from 'workbox-window';
 
-import WorkBoxContext from './WorkBoxContext';
+import WorkboxContext from './WorkboxContext';
 
-const WorkBoxProvider: FC<{serviceWorkerUrl: string; interval: number}> = ({
+const WorkboxProvider: FC<{serviceWorkerUrl?: string; interval?: number}> = ({
     children,
     serviceWorkerUrl = `/service-worker.js`,
     // interval = 60 * 60 * 1000, // 1 hour
@@ -35,7 +35,7 @@ const WorkBoxProvider: FC<{serviceWorkerUrl: string; interval: number}> = ({
     }, []);
 
     return (
-        <WorkBoxContext.Provider
+        <WorkboxContext.Provider
             value={{
                 isUpdateWaiting,
                 activateUpdate: () => {
@@ -76,8 +76,8 @@ const WorkBoxProvider: FC<{serviceWorkerUrl: string; interval: number}> = ({
                 },
             }}>
             {children}
-        </WorkBoxContext.Provider>
+        </WorkboxContext.Provider>
     );
 };
 
-export default WorkBoxProvider;
+export default WorkboxProvider;
