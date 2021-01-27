@@ -21,9 +21,9 @@
     "create react app",
     "CRA"
   ],
-  "main": "build/index.js",
-  "module": "build/index.js",
-  "typings": "build/index.d.ts",
+  "main": "build/cjs/index.js",
+  "module": "build/es/index.js",
+  "typings": "build/es/index.d.ts",
   "scripts": {
     "test": "jest",
     "prepublish": "npm run build",

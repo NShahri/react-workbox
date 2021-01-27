@@ -1,2 +1,2 @@
-export {default as UpdateAvailable} from './UpdateWaiting';
-export {default as WorkBoxProvider} from './WorkboxProvider';
+export {default as UpdateWaiting} from './UpdateWaiting';
+export {default as WorkboxProvider} from './WorkboxProvider';
