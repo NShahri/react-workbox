@@ -10,8 +10,8 @@ test('Rendering WorkboxProvider successfully', () => {
 });
 
 test('Rendering WorkboxProvider render exact children', () => {
-    const testRenderer = TestRenderer.create(<WorkboxProvider>CHILD</WorkboxProvider>);
+    const testContent = 'CHILD';
+    const testRenderer = TestRenderer.create(<WorkboxProvider>{testContent}</WorkboxProvider>);
 
-    expect(testRenderer.toJSON()).toBe('CHILD');
+    expect(testRenderer.toJSON()).toBe(testContent);
 });
-

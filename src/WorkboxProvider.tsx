@@ -1,9 +1,9 @@
 import React, {FC, useEffect, useState} from 'react';
 import {Workbox} from 'workbox-window';
+import {WorkboxLifecycleWaitingEvent} from 'workbox-window/utils/WorkboxEvent';
 
 import WorkboxContext from './WorkboxContext';
 import logger from './logger';
-import {WorkboxLifecycleWaitingEvent} from 'workbox-window/utils/WorkboxEvent';
 
 const WorkboxProvider: FC<{serviceWorkerUrl?: string; interval?: number}> = ({
     children,

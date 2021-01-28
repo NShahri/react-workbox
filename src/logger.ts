@@ -20,7 +20,7 @@ const methodToColorMap: {[methodName in LoggerMethods]: string | null} = {
 
 let inGroup = false;
 
-const print = function (method: LoggerMethods, args: any[]) {
+const print = function (method: LoggerMethods, args: unknown[]) {
     const styles = [
         `background: ${methodToColorMap[method]}`,
         `border-radius: 0.5em`,
