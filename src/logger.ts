@@ -1,4 +1,4 @@
-import {name} from '../package.json';
+const name = 'react-workbox';
 
 enum LoggerMethods {
     debug = 'debug',

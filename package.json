@@ -28,7 +28,7 @@
     "test": "jest",
     "prepublish": "npm run build",
     "prebuild": "rimraf build/",
-    "build": "tsc --project tsconfig.json && tsc --project tsconfig-cjs.json",
+    "build": "tsc --project tsconfig.json & tsc --project tsconfig-cjs.json",
     "format": "prettier --config ./.prettierrc --write 'src/**/*.{ts,tsx}' && module-grouping 'src/**/*.{ts,tsx}' --write",
     "lint": "eslint ./src"
   },
