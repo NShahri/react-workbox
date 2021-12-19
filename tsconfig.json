@@ -2,7 +2,6 @@
   "compilerOptions": {
     "outDir": "build/es",
     "module": "ES2020",
-
     "target": "ES2015",
     "strict": true,
     "esModuleInterop": true,
@@ -11,9 +10,8 @@
     "importHelpers": true,
     "resolveJsonModule": true,
     //    "noEmitHelpers": true,
-
     "jsx": "react",
-    "sourceMap": true,
+    "sourceMap": false,
     "allowJs": false,
     "declaration": true,
     "forceConsistentCasingInFileNames": true,
